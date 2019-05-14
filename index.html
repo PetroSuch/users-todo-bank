@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Index</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body ng-app="app" ng-controller="indexCtrl">
+<button class="btn-add-new" ng-click="popUp_AddNew = true">Add New</button>
+<form name="formAddNew" class="form-new-user" ng-show="popUp_AddNew" ng-click="closeOutsideAddNew($event)">
+	<div class="container-form" id="form">
+		<div class="item-form">
+			<label>Card {{popUp_AddNew}}</label>
+			<input type="text" ng-model="newUser.CARD" placeholder="Card" required="">
+		</div>
+		<div class="item-form">
+			<label>Lastname</label>
+			<input type="text" ng-model="newUser.LASTNAME" placeholder="Lastname" required="">
+		</div>
+		<div class="item-form">
+			<label>Firstname</label>
+			<input type="text" ng-model="newUser.FIRSTNAME" placeholder="Firstname" required="">
+		</div>
+		<div class="item-form">
+			<label>Patronymic</label>
+			<input type="text" ng-model="newUser.PATRONYMIC" placeholder="Patronymic" required="">
+		</div>
+		<div class="item-form">
+			<label>Organisation name short</label>
+			<input type="text" ng-model="newUser.ORGNAMESHORT" placeholder="Organisation name (short)" required="">
+		</div>
+		<div class="item-form">
+			<label ng-style="{'color':formAddNew.type_name.$invalid && validateForm?'red':''}">Person Type Name</label>
+			<select ng-model="newUser.PERSONTYPENAME" required="" name="type_name">
+				<option value="Физ.лицо">Физ. лицо</option>
+				<option value="Юр.лицо">Юр. лицо</option>
+			</select>
+		</div>
+		<div class="item-form">
+			<label ng-style="{'color':formAddNew.curr_name.$invalid && validateForm?'red':''}">Currency name</label>
+			<select ng-model="newUser.CURRNAME" required="" name="curr_name">
+				<option value="RUB" selected="">RUB</option>
+				<option value="UAH">UAH</option>
+				<option value="USB">USD</option>
+			</select>
+		</div>
+		<div class="item-form">
+			<label>Birthdate</label>
+			<input type="date" ng-model="newUser.BIRTHDATE" required="">
+		</div>
+		<button class="btn-send" ng-click="addNewUser(formAddNew)">
+			<span ng-class="{'hide-txt':loader}">Send</span>
+			<div class="loader" ng-class="{'show-loader':loader}"></div>
+		</button>
+	</div>
+</form>
+<div class="table-container">
+	<table>
+		<tr>
+			<td></td>
+			<td class="title txt-center" ng-repeat="item in fields">{{item.name}}</td>
+		</tr>
+		<tr ng-repeat="item in users"> 
+			<td>
+				<button class="btn-delete" ng-click="deleteUser(item.IDPERSON)">Удалить</button>
+			</td>
+			<td  ng-repeat="k in item track by $index" ng-class="{'txt-center':$index > 0 && $index < 4}">{{k}}</td>
+			
+			
+		</tr>
+	</table>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="js/app/app.js"></script>  
+<script src="js/app/controller/index-ctrl.js"></script> 
+<script src="js/app/factory/factory-crud.js"></script>  
+</body>
+</html>

@@ -1,0 +1,149 @@
+*{
+	box-sizing: border-box !important;
+	transition: 0.1s all linear;
+}
+html,body{
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: #000;
+	font-family: "Arial", cursive, sans-serif;
+
+}
+table,td{
+	border:1px solid #000;
+}
+td{
+	cursor: pointer;
+	padding: 5px;
+	text-align: left;
+}
+td:hover{
+	font-weight: bold;
+}
+.txt-center{
+	text-align:  center !important;
+}
+.table-container{
+	overflow-y: scroll;
+}
+.title{
+	font-weight: bold;
+	text-transform: lowercase;
+}
+.title:first-letter {
+    text-transform: uppercase;
+}
+
+.form-new-user{
+	position: fixed;
+	overflow-y: scroll;
+	width:100%;
+	height: 100%;
+	top: 0;
+	background: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.container-form{
+	padding: 20px;
+	background: rgba(47,38,38,0.9);
+	color: #fdfdfd;
+}
+
+.item-form{
+	width: 350px;
+	display: flex;
+	justify-content: space-between;
+}
+.item-form{
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	padding-top: 10px;
+}
+.item-form input,select{
+	padding: 10px;
+}
+.item-form select{
+	width: 100px;
+}
+.btn-delete{
+	cursor: pointer;
+	border:none;
+	background: #f93f3f;
+	outline: none;
+	color: #fdfdfd;
+	padding: 7px 10px;
+	border-radius: 5px;
+}
+.btn-delete:hover{
+	background: red;
+
+}
+.btn-add-new{
+	padding: 10px 15px;
+	background: #2eec69;
+	border:none;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	border-radius: 5px;
+	width: 150px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	font-size: 16px;
+}
+.btn-add-new:hover{
+	background: #55f185;
+}
+.container-form button{
+	
+}
+.btn-send:hover{
+	background: #584e4e;
+}
+.btn-send{
+	cursor: pointer;
+	margin-top: 20px;
+	width:  100%;
+	outline: none;
+	background: none;
+	color: #fdfdfd;
+	padding: 10px 5px;
+	border:2px solid #fdfdfd;
+	font-size: 16px; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+.btn-send span, .btn-send div{
+	position: absolute;
+}
+.show-loader{
+
+}
+.loader {
+  opacity: 0;
+  border: 2px solid #f3f3f3; /* Light grey */
+  border-top: 2px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.hide-txt{
+	opacity: 0;
+}
+.show-loader{
+	opacity: 1;
+}
