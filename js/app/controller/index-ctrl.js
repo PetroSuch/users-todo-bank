@@ -3,8 +3,10 @@ app.controller('indexCtrl', function($scope,FactoryCrud,$timeout) {
     $scope.fields = [];
     $scope.newUser = {};
     $scope.popUp_AddNew = false;
+    $scope.popUp_Profile = false;
     $scope.loader = false;
     $scope.validateForm = false;
+    $scope.singleUser = [];
 
     FactoryCrud.get('users.json').then((users_res)=>{
         FactoryCrud.get('items.json').then((fields_res)=>{
@@ -77,6 +79,22 @@ app.controller('indexCtrl', function($scope,FactoryCrud,$timeout) {
         if(!popup.contains(event.target)){ 
             console.log(event.target)
             $scope.popUp_AddNew = false;
+        }
+    }
+    $scope.closeOutsideProfile = function(event){
+        var popup = document.getElementById('profile');
+        if(!popup.contains(event.target)){ 
+            console.log(event.target)
+            $scope.popUp_Profile = false;
+        }
+    }
+
+    $scope.showProfileUser = function(id_person){
+        for(var k in $scope.users){
+            if($scope.users[k]['IDPERSON'] == id_person){
+                $scope.popUp_Profile = true
+                $scope.singleUser = $scope.users[k]
+            }
         }
     }
 

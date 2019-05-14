@@ -147,3 +147,36 @@ td:hover{
 .show-loader{
 	opacity: 1;
 }
+
+.pop-up-users-profile{
+	position: fixed;
+	top: 0;
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.container-profile .item{
+	padding: 10px;
+	border-top: 1px solid #f5c8c8;
+}
+.container-profile .item{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+.container-profile .item span{
+	width: 50%;
+}
+.container-profile{
+	overflow-y: scroll;
+	width: 500px;
+	max-height: 600px;
+	padding: 20px;
+	background: #fdfdfd;
+}
