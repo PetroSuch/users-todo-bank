@@ -63,13 +63,21 @@
 			<td>
 				<button class="btn-delete" ng-click="deleteUser(item.IDPERSON)">Удалить</button>
 			</td>
-			<td  ng-repeat="k in item track by $index" ng-class="{'txt-center':$index > 0 && $index < 4}">{{k}}</td>
+			<td ng-click="showProfileUser(item.IDPERSON)"  ng-repeat="k in item track by $index" ng-class="{'txt-center':$index > 0 && $index < 4}">{{k}}</td>
 			
 			
 		</tr>
 	</table>
 </div>
 
+<div class="pop-up-users-profile" ng-if="popUp_Profile" ng-click="closeOutsideProfile($event)">
+	<div class="container-profile" id="profile">
+		<div class="item" ng-repeat="(k,v) in singleUser">
+			<span class="title">{{k}}</span>
+			<span class="val">{{v}}</span>
+		</div>
+	</div>     
+</div>
 
 
 
