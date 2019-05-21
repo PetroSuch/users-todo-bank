@@ -3,8 +3,10 @@
 <head>
   <title>Todo</title>
   <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" href="https://rawgit.com/formio/ngFormio/master/dist/formio-full.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/formio.css" />
 </head>
-<body ng-app="app" ng-controller="indexCtrl">
+<body ng-app="app-user" ng-controller="indexCtrl">
 <button class="btn-add-new" ng-click="popUp_AddNew = true">Add New</button>
 <form name="formAddNew" class="form-new-user" ng-show="popUp_AddNew" ng-click="closeOutsideAddNew($event)">
 	<div class="container-form" id="form">
@@ -78,11 +80,15 @@
 		</div>
 	</div>     
 </div>
+{{submission}}
+<formio src="'https://gaenxikuakdsnzf.form.io/user/register'" submission="submission"></formio>
 
-
-
+<script src="https://rawgit.com/formio/ngFormio/master/dist/formio-full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script src="js/app/app.js"></script>  
+
+  <script src="js/app/app.js"></script>  
 <script src="js/app/controller/index-ctrl.js"></script> 
 <script src="js/app/factory/factory-crud.js"></script>  
 </body>

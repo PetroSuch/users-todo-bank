@@ -1,4 +1,4 @@
-app.controller('indexCtrl', function($scope,FactoryCrud,$timeout) {
+app.controller('indexCtrl', function($scope,$rootScope,FactoryCrud,$timeout) {
     $scope.users = [];
     $scope.fields = [];
     $scope.newUser = {};
@@ -7,6 +7,7 @@ app.controller('indexCtrl', function($scope,FactoryCrud,$timeout) {
     $scope.loader = false;
     $scope.validateForm = false;
     $scope.singleUser = [];
+    $scope.submission = {};
 
     FactoryCrud.get('users.json').then((users_res)=>{
         FactoryCrud.get('items.json').then((fields_res)=>{
